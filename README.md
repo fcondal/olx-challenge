@@ -1,1 +1,1 @@
-# Propiedades API REST - Lumen
+# Propiedades - API REST Lumen
