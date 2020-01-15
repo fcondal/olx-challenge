@@ -9,7 +9,7 @@ Composer
 
 ## **Instalación**
 
- 1. Clonar repositorio: 
+ 1. Clonar repositorio - rama master (development tambien tiene los ultimos cambios, ya que trabajo en development y luego al finalizar mergeo con master). 
  2. Crear en MySQL una base de datos con collation utf8mb4_general_ci y con un nombre a eleccion (por ejemplo: propiedades).
  3. Crear archivo .env a partir del .env.example y configurarlo con: las credenciales de base de datos, una KEY para el campo APP_KEY y una KEY para el campo JWT_SECRET (Este ultimo hay que agregarlo ya que no figura por default en el archivo).
  4. Ejecutar dentro del proyecto el comando para instalar las librerías necesarias para el funcionamiento del proyecto: composer install
