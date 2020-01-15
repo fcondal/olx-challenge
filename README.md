@@ -145,5 +145,6 @@ Authorization: Bearer {token}
 
 - Controlar que no falte ningún paso para la instalación del sistema
  - Mejorar el Handler de Excepciones.
+ - Mejorar las validaciones de los campos de entrada y desacoplaros del controlador (creando clases Request de validaciones).
  - Implementar traducción al español de mensajes de error en validaciones de campos.
  - Completar documentación
