@@ -42,10 +42,15 @@ class RealEstate extends Model
             $query->where('operation_type_id', $searchTerm['tipo_operacion']);
 
         if(isset($searchTerm['precio_desde']))
-            $query->where('min_price', $searchTerm['precio_desde']);
+            $query->where('min_price', '>=',$searchTerm['precio_desde']);
 
         if(isset($searchTerm['precio_hasta']))
-            $query->where('max_price', $searchTerm['precio_hasta']);
+            $query->where('max_price', '<=',$searchTerm['precio_hasta']);
+
+        if(isset($searchTerm['texto_libre'])){
+            $query->where('title', 'LIKE','%'.$searchTerm['texto_libre'].'%');
+            $query->orWhere('description', 'LIKE','%'.$searchTerm['texto_libre'].'%');
+        }
 
         return $query;
     }

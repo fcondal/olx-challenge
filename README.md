@@ -2,7 +2,7 @@
 
 **Endpoints**
 
-Login
+**Login**
 
 URL: {Endpoint}/login
 Method: POST
@@ -10,13 +10,22 @@ Params:
 usuario: requerido, string
 clave: requerido, string
 
+Header
+
+_Content-Type: application/x-www-form-urlencoded_
+
 Success
 
-Code: 200
+Code: _200_
 Content:
-{
-    "token": "ey..."
-}
+_{
+    "token": "eyaqt..."
+}_
+
+
+
+
+
 
 
 

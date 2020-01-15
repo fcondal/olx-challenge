@@ -53,11 +53,11 @@ class AuthController extends BaseController
     public function login() {
 
         $this->validate($this->request, [
-            'nombre'     => 'required|string|max:255',
+            'usuario'     => 'required|string|max:255',
             'clave'  => 'required|string|max:255'
         ]);
 
-        $user = User::where('username', $this->request->input('nombre'))->first();
+        $user = User::where('username', $this->request->input('usuario'))->first();
 
         if(!$user || !Hash::check($this->request->input('clave'), $user->password)){
             return response()->json([
