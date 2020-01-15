@@ -17,4 +17,10 @@ class OperationType extends Model
 
     public $timestamps = false;
 
+    public function realEstate()
+    {
+        return $this->hasMany('App\RealEstate');
+    }
+
+
 }

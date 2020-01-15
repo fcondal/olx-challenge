@@ -7,15 +7,23 @@ use Exception;
 use App\User;
 use Firebase\JWT\JWT;
 use Firebase\JWT\ExpiredException;
+use Illuminate\Support\Str;
 
 class JwtMiddleware
 {
     public function handle($request, Closure $next, $guard = null)
     {
-        $token = $request->get('token');
+        $token = $request->header('Authorization', '');
+
+        if (Str::startsWith($token, 'Bearer ')) {
+            $token = Str::substr($token, 7);
+        } else {
+            return response()->json([
+                'error' => 'Token invalido'
+            ], 400);
+        }
 
         if(!$token) {
-            // Unauthorized response if token not there
             return response()->json([
                 'error' => 'El token es requerido.'
             ], 401);

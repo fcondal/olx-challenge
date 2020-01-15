@@ -11,15 +11,14 @@
 |
 */
 
-/*$router->get('/', function () use ($router) {
-    return $router->app->version();
-});*/
-
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('login', 'AuthController@login');
 
     $router->group(['middleware' => 'jwt.auth'], function() use ($router) {
-        $router->get('propiedades', 'RealEstateController@index')->name('realEstate.index');
+        $router->get('propiedades', 'RealEstateController@index');
+        $router->get('propiedades/{id}', 'RealEstateController@show');
+        $router->put('propiedades/{id}', 'RealEstateController@update');
+        $router->delete('propiedades/{id}', 'RealEstateController@destroy');
     });
 
 });

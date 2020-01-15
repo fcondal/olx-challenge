@@ -21,14 +21,5 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'username', 'password',
     ];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-    ];
-
     public $timestamps = false;
 }

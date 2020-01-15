@@ -6,7 +6,6 @@ use Validator;
 use App\User;
 use Firebase\JWT\JWT;
 use Illuminate\Http\Request;
-use Firebase\JWT\ExpiredException;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
@@ -49,32 +48,26 @@ class AuthController extends BaseController
     /**
      * Login de usuarios
      *
-     * @param  \App\User   $user
      * @return mixed
      */
-    public function login(User $user) {
+    public function login() {
 
         $this->validate($this->request, [
-            'nombre'     => 'required',
-            'clave'  => 'required'
+            'nombre'     => 'required|string|max:255',
+            'clave'  => 'required|string|max:255'
         ]);
 
-        // Find the user by username
         $user = User::where('username', $this->request->input('nombre'))->first();
 
-        if(!$user){
-            // Bad Request response
+        if(!$user || !Hash::check($this->request->input('clave'), $user->password)){
             return response()->json([
                 'error' => 'Las credenciales no coinciden con un usuario del sistema.'
             ], 400);
         }
 
-        // Verify the password and generate the token
-        if (Hash::check($this->request->input('clave'), $user->password)) {
-            return response()->json([
-                'token' => $this->jwt($user)
-            ], 200);
-        }
+        return response()->json([
+            'token' => $this->jwt($user)
+        ], 200);
 
     }
 }

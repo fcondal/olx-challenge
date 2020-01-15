@@ -11,9 +11,14 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\RealEstate::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
+        'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'description' => $faker->text,
+        'status_id' => $faker->numberBetween($min = 1, $max = 3),
+        'kind_id' => $faker->numberBetween($min = 1, $max = 6),
+        'operation_type_id' => $faker->numberBetween($min = 1, $max = 2),
+        'min_price' => $faker->randomNumber(2),
+        'max_price' => $faker->randomNumber(2)
     ];
 });

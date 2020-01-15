@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+class Kind extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -16,7 +16,6 @@ class Status extends Model
     ];
 
     public $timestamps = false;
-    protected $table = 'status';
 
     public function realEstate()
     {
