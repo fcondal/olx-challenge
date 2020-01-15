@@ -52,7 +52,7 @@ Authorization: Bearer {token}
   
 **Success - Ejemplo**  
 **Code**: _200_  
-**Content**:  
+**Ejemplo**:  
     *{
 	    "data": [
 	    {
@@ -92,7 +92,7 @@ Authorization: Bearer {token}
   
 **Success - Ejemplo**  
 **Code**: _200_  
-**Content**:  
+**Ejemplo**:  
 *{
 "data": {
 "id": 2,
@@ -118,7 +118,7 @@ Content-Type: application/x-www-form-urlencoded
   
 **Success - Ejemplo**  
 **Code**: _200_  
-**Content**:  
+**Ejemplo**:  
 *{
 "data": {
 "message": "La propiedad se ha modificado correctamente"
@@ -134,7 +134,7 @@ Authorization: Bearer {token}
   
 **Success - Ejemplo**  
 **Code**: _200_  
-**Content**:  
+**Ejemplo**:  
 {
 "data": {
 "message": "La propiedad se ha eliminado correctamente"
@@ -146,4 +146,4 @@ Authorization: Bearer {token}
 - Controlar que no falte ningún paso para la instalación del sistema
  - Mejorar el Handler de Excepciones.
  - Implementar traducción al español de mensajes de error en validaciones de campos.
- - Completar documentación con algunos casos de error.
+ - Completar documentación
