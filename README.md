@@ -1,5 +1,5 @@
 # Propiedades - API REST Lumen  
-API REST de propiedades inmobiliarias.
+OLX Challenge - 6 hs - API REST de propiedades inmobiliarias.
 
 ## **Requerimientos**
 PHP 7.2
