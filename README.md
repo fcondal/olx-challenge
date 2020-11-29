@@ -1,4 +1,4 @@
-# Propiedades - API REST Lumen  
+# OLX Challenge - API REST Lumen  
 OLX Challenge - 6 hs - API REST de propiedades inmobiliarias.
 
 ## **Requerimientos**
